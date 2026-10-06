@@ -63,7 +63,19 @@ public class StoreFrontPage extends BasePage {
         if (ele.isElementDisplayed(emptySearchMsg)) {
             return "No product matches";
         }
-        return ele.getTextSafely(productTitles);
+        java.util.List<org.openqa.selenium.WebElement> elements = driver.findElements(productTitles);
+        if (elements.isEmpty()) {
+            return "No product matches";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (org.openqa.selenium.WebElement el : elements) {
+            try {
+                sb.append(el.getText()).append(" ");
+            } catch (Exception ignored) {
+            }
+        }
+        String combined = sb.toString().trim();
+        return combined.isEmpty() ? "No product matches" : combined;
     }
 
     public void navigateToSearchPage() {

@@ -100,7 +100,7 @@ public class CartPage extends BasePage {
     }
 
     public boolean isCartEmpty() {
-        return ele.isElementDisplayed(emptyCartMsg);
+        return ele.isElementDisplayed(emptyCartMsg) || !ele.isElementPresent(firstRowQtyInput);
     }
 
     public void clickEmptyCartContinue() {

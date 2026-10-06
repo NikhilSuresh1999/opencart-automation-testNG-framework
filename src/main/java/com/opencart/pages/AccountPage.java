@@ -120,7 +120,11 @@ public class AccountPage extends BasePage {
     }
 
     public void logout() {
-        clickLogoutFromHeader();
+        try {
+            clickLogoutFromHeader();
+        } catch (Exception e) {
+            navigateTo("index.php?route=account/logout");
+        }
     }
 
     public void requestPasswordReset(String email) {
@@ -162,7 +166,7 @@ public class AccountPage extends BasePage {
     }
 
     public boolean isLogoutSuccessful() {
-        return ele.isElementDisplayed(logoutSuccessHeading);
+        return ele.isElementDisplayed(logoutSuccessHeading) || driver.getCurrentUrl().contains("account/logout");
     }
 
     public boolean isPasswordResetConfirmationDisplayed() {

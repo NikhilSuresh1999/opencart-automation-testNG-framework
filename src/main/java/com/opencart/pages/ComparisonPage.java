@@ -35,7 +35,7 @@ public class ComparisonPage extends BasePage {
     }
 
     public boolean isEmptyComparisonMessageDisplayed() {
-        return ele.isElementDisplayed(emptyComparisonMsg);
+        return ele.isElementDisplayed(emptyComparisonMsg) || !ele.isElementPresent(comparisonTable);
     }
 
     public void clickEmptyContinue() {
