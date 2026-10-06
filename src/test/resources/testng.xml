@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OpenCart Enterprise TestNG Suite" verbose="1">
+
+    <listeners>
+        <listener class-name="com.opencart.listeners.TestListener"/>
+        <listener class-name="com.opencart.listeners.AnnotationTransformer"/>
+    </listeners>
+
+    <test name="OpenCart Full Regression Test Suite">
+        <classes>
+            <class name="com.opencart.tests.RegistrationAndAuthTest"/>
+            <class name="com.opencart.tests.ProductSearchAndCatalogTest"/>
+            <class name="com.opencart.tests.CategoryNavigationAndSortingTest"/>
+            <class name="com.opencart.tests.ProductDetailAndReviewTest"/>
+            <class name="com.opencart.tests.ShoppingCartTest"/>
+            <class name="com.opencart.tests.WishlistAndComparisonTest"/>
+            <class name="com.opencart.tests.CheckoutTest"/>
+            <class name="com.opencart.tests.CustomerServiceAndStaticPagesTest"/>
+            <class name="com.opencart.tests.AdminPanelTest"/>
+        </classes>
+    </test>
+
+</suite>
+

@@ -1,0 +1,19 @@
+# Maven build target directory
+target/
+
+# Test output and temporary reports
+test-output/
+*.log
+
+# IDE & Editor files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
